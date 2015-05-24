@@ -72,5 +72,20 @@ activityLabels <- read.table(file.path(path_rf, "activity_labels.txt"),header = 
 Data$activity<-as.factor(Data$activity)
 head(Data$activity,30)
 
+#Appropriately labels the data set with descriptive variable names.
+names(Data)<-gsub("^t", "time", names(Data))
+names(Data)<-gsub("^f", "frequency", names(Data))
+names(Data)<-gsub("Acc", "Accelerometer", names(Data))
+names(Data)<-gsub("Gyro", "Gyroscope", names(Data))
+names(Data)<-gsub("Mag", "Magnitude", names(Data))
+names(Data)<-gsub("BodyBody", "Body", names(Data))
 
+
+library(plyr);
+Data2<-aggregate(. ~subject + activity, Data, mean)
+Data2<-Data2[order(Data2$subject,Data2$activity),]
+write.table(Data2, file = "tidydata.txt",row.name=FALSE)
+
+library(knitr)
+knit2html("codebook.md");
 
