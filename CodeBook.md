@@ -80,21 +80,21 @@ Section4: Create an independent tidy data set with the average of each variable 
 | ------ | :------------------------------------------------------ | :---------------------------- |
 |      1 | subjectid                                               | subject id from subjects file |
 |      2 | activityname                                            | activity id from labels file  |
-|      3 | timeBodyAccelarator-mean()-X                            | tBodyAcc-mean()-X             |
-|      4 | timeBodyAccelarator-mean()-Y                            | tBodyAcc-mean()-Y             |
-|      5 | timeBodyAccelarator-mean()-Z                            | tBodyAcc-mean()-Z             |
+|      3 | timeBodyAccelerometer-mean()-X                          | tBodyAcc-mean()-X             |
+|      4 | timeBodyAccelerometer-mean()-Y                          | tBodyAcc-mean()-Y             |
+|      5 | timeBodyAccelerometer-mean()-Z                          | tBodyAcc-mean()-Z             |
 |      6 | timeBodyAccelerometer-std()-X                           | tBodyAcc-std()-X              |
 |      7 | timeBodyAccelerometer-std()-Y                           | tBodyAcc-std()-Y              |
 |      8 | timeBodyAccelerometer-std()-Z                           | tBodyAcc-std()-Z              |
-|      9 | timeGravityAccelarator-mean()-X                         | tGravityAcc-mean()-X          |
-|     10 | timeGravityAccelarator-mean()-Y                         | tGravityAcc-mean()-Y          |
-|     11 | timeGravityAccelarator-mean()-Z                         | tGravityAcc-mean()-Z          |
+|      9 | timeGravityAccelerometer-mean()-X                       | tGravityAcc-mean()-X          |
+|     10 | timeGravityAccelerometer-mean()-Y                       | tGravityAcc-mean()-Y          |
+|     11 | timeGravityAccelerometer-mean()-Z                       | tGravityAcc-mean()-Z          |
 |     12 | timeGravityAccelerometer-std()-X                        | tGravityAcc-std()-X           |
 |     13 | timeGravityAccelerometer-std()-Y                        | tGravityAcc-std()-Y           |
 |     14 | timeGravityAccelerometer-std()-Z                        | tGravityAcc-std()-Z           |
-|     15 | timeBodyAccelaratorJerk-mean()-X                        | tBodyAccJerk-mean()-X         |
-|     16 | timeBodyAccelaratorJerk-mean()-Y                        | tBodyAccJerk-mean()-Y         |
-|     17 | timeBodyAccelaratorJerk-mean()-Z                        | tBodyAccJerk-mean()-Z         |
+|     15 | timeBodyAccelerometerJerk-mean()-X                      | tBodyAccJerk-mean()-X         |
+|     16 | timeBodyAccelerometerJerk-mean()-Y                      | tBodyAccJerk-mean()-Y         |
+|     17 | timeBodyAccelerometerJerk-mean()-Z                      | tBodyAccJerk-mean()-Z         |
 |     18 | timeBodyAccelerometerJerk-std()-X                       | tBodyAccJerk-std()-X          |
 |     19 | timeBodyAccelerometerJerk-std()-Y                       | tBodyAccJerk-std()-Y          |
 |     20 | timeBodyAccelerometerJerk-std()-Z                       | tBodyAccJerk-std()-Z          |
