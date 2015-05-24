@@ -75,41 +75,75 @@ a. Use the labels in activity_labels.txt to create factors.
 
 Section4: Create an independent tidy data set with the average of each variable for each activity and each subject.
 
-The tidy data set contains 10299 observations with 81 variables divided in:
 
-    an activity label (Activity): WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-    an identifier of the subject who carried out the experiment (Subject): 1, 3, 5, 6, 7, 8, 11, 14, 15, 
-      16, 17, 19, 21, 22, 23, 25, 26, 27, 28, 29, 30
-    a 79-feature vector with time and frequency domain signal variables (numeric)
-
-The following list contain the 17 signals to the names used as prefix for the variables names present in the data set.
-".XYZ" denotes three variables, one for each axis (Name 	Time domain 	Frequency domain)
-
-Body Acceleration 	
-TimeDomain.BodyAcceleration.XYZ 	
-FrequencyDomain.BodyAcceleration.XYZ
-Gravity Acceleration 	
-TimeDomain.GravityAcceleration.XYZ 	
-Body Acceleration Jerk 	
-TimeDomain.BodyAccelerationJerk.XYZ 	
-FrequencyDomain.BodyAccelerationJerk.XYZ
-Body Angular Speed 	
-TimeDomain.BodyAngularSpeed.XYZ 	
-FrequencyDomain.BodyAngularSpeed.XYZ
-Body Angular Acceleration 	
-TimeDomain.BodyAngularAcceleration.XYZ 	
-Body Acceleration Magnitude 	
-TimeDomain.BodyAccelerationMagnitude 	
-FrequencyDomain.BodyAccelerationMagnitude
-Gravity Acceleration Magnitude 	
-TimeDomain.GravityAccelerationMagnitude 	
-Body Acceleration Jerk Magnitude 	
-TimeDomain.BodyAccelerationJerkMagnitude 	
-FrequencyDomain.BodyAccelerationJerkMagnitude
-Body Angular Speed Magnitude 	
-TimeDomain.BodyAngularSpeedMagnitude 	
-FrequencyDomain.BodyAngularSpeedMagnitude
-Body Angular Acceleration Magnitude 	
-TimeDomain.BodyAngularAccelerationMagnitude 	
-FrequencyDomain.BodyAngularAccelerationMagnitude
+| Colmun |                         Variable                        |        source variable        |
+| ------ | :------------------------------------------------------ | :---------------------------- |
+|      1 | subjectid                                               | subject id from subjects file |
+|      2 | activityname                                            | activity id from labels file  |
+|      3 | timeBodyAccelarator-mean()-X                            | tBodyAcc-mean()-X             |
+|      4 | timeBodyAccelarator-mean()-Y                            | tBodyAcc-mean()-Y             |
+|      5 | timeBodyAccelarator-mean()-Z                            | tBodyAcc-mean()-Z             |
+|      6 | timeBodyAccelerometer-std()-X                           | tBodyAcc-std()-X              |
+|      7 | timeBodyAccelerometer-std()-Y                           | tBodyAcc-std()-Y              |
+|      8 | timeBodyAccelerometer-std()-Z                           | tBodyAcc-std()-Z              |
+|      9 | timeGravityAccelarator-mean()-X                         | tGravityAcc-mean()-X          |
+|     10 | timeGravityAccelarator-mean()-Y                         | tGravityAcc-mean()-Y          |
+|     11 | timeGravityAccelarator-mean()-Z                         | tGravityAcc-mean()-Z          |
+|     12 | timeGravityAccelerometer-std()-X                        | tGravityAcc-std()-X           |
+|     13 | timeGravityAccelerometer-std()-Y                        | tGravityAcc-std()-Y           |
+|     14 | timeGravityAccelerometer-std()-Z                        | tGravityAcc-std()-Z           |
+|     15 | timeBodyAccelaratorJerk-mean()-X                        | tBodyAccJerk-mean()-X         |
+|     16 | timeBodyAccelaratorJerk-mean()-Y                        | tBodyAccJerk-mean()-Y         |
+|     17 | timeBodyAccelaratorJerk-mean()-Z                        | tBodyAccJerk-mean()-Z         |
+|     18 | timeBodyAccelerometerJerk-std()-X                       | tBodyAccJerk-std()-X          |
+|     19 | timeBodyAccelerometerJerk-std()-Y                       | tBodyAccJerk-std()-Y          |
+|     20 | timeBodyAccelerometerJerk-std()-Z                       | tBodyAccJerk-std()-Z          |
+|     21 | timeBodyGyroscope-mean()-X                              | tBodyGyro-mean()-X            |
+|     22 | timeBodyGyroscope-mean()-Y                              | tBodyGyro-mean()-Y            |
+|     23 | timeBodyGyroscope-mean()-Z                              | tBodyGyro-mean()-Z            |
+|     24 | timeBodyGyroscope-std()-X                               | tBodyGyro-std()-X             |
+|     25 | timeBodyGyroscope-std()-Y                               | tBodyGyro-std()-Y             |
+|     26 | timeBodyGyroscope-std()-Z                               | tBodyGyro-std()-Z             |
+|     27 | timeBodyGyroscopeJerk-mean()-X                          | tBodyGyroJerk-mean()-X        |
+|     28 | timeBodyGyroscopeJerk-mean()-Y                          | tBodyGyroJerk-mean()-Y        |
+|     29 | timeBodyGyroscopeJerk-mean()-Z                          | tBodyGyroJerk-mean()-Z        |
+|     30 | timeBodyGyroscopeJerk-std()-X                           | tBodyGyroJerk-std()-X         |
+|     31 | timeBodyGyroscopeJerk-std()-Y                           | tBodyGyroJerk-std()-Y         |
+|     32 | timeBodyGyroscopeJerk-std()-Z                           | tBodyGyroJerk-std()-Z         |
+|     33 | timeBodyAccelerometerMagnitude-mean                     | tBodyAccMag-mean()            |
+|     34 | timeBodyAccelerometerMagnitude-std()                    | tBodyAccMag-std()             |
+|     35 | timeGravityAccelerometerMagnitude-mean()                | tGravityAccMag-mean()         |
+|     36 | timeGravityAccelerometerMagnitude-std()                 | tGravityAccMag-std()          |
+|     37 | timeBodyAccelerometerJerkMagnitude-mean                 | tBodyAccJerkMag-mean()        |
+|     38 | timeBodyAccelerometerJerkMagnitude-std()                | tBodyAccJerkMag-std()         |
+|     39 | timeBodyGyroscopeMagnitude-mean()                       | tBodyGyroMag-mean()           |
+|     40 | timeBodyGyroscopeMagnitude-std()                        | tBodyGyroMag-std()            |
+|     41 | timeBodyGyroscopeJerkMagnitude-mean()                   | tBodyGyroJerkMag-mean()       |
+|     42 | timeBodyGyroscopeJerkMagnitude-std()                    | tBodyGyroJerkMag-std()        |
+|     43 | frequencyBodyAccelerometer-mean()-X                     | fBodyAcc-mean()-X             |
+|     44 | frequencyBodyAccelerometer-mean()-Y                     | fBodyAcc-mean()-Y             |
+|     45 | frequencyBodyAccelerometer-mean()-Z                     | fBodyAcc-mean()-Z             |
+|     46 | frequencyBodyAccelerometer-std()-X                      | fBodyAcc-std()-X              |
+|     47 | frequencyBodyAccelerometer-std()-Y                      | fBodyAcc-std()-Y              |
+|     48 | frequencyBodyAccelerometer-std()-Z                      | fBodyAcc-std()-Z              |
+|     49 | frequencyBodyAccelerometerJerk-mean-X                   | fBodyAccJerk-mean()-X         |
+|     50 | frequencyBodyAccelerometerJerk-mean-Y                   | fBodyAccJerk-mean()-Y         |
+|     51 | frequencyBodyAccelerometerJerk-mean-Z                   | fBodyAccJerk-mean()-Z         |
+|     52 | frequencyBodyAccelerometerJerk-std()-X                  | fBodyAccJerk-std()-X          |
+|     53 | frequencyBodyAccelerometerJerk-std()-Y                  | fBodyAccJerk-std()-Y          |
+|     54 | frequencyBodyAccelerometerJerk-std()-Z                  | fBodyAccJerk-std()-Z          |
+|     55 | frequencyBodyGyroscopemean()-X                          | fBodyGyro-mean()-X            |
+|     56 | frequencyBodyGyroscopemean()-Y                          | fBodyGyro-mean()-Y            |
+|     57 | frequencyBodyGyroscopemean()-Z                          | fBodyGyro-mean()-Z            |
+|     58 | frequencyBodyGyroscope-std()-X                          | fBodyGyro-std()-X             |
+|     59 | frequencyBodyGyroscope-std()-Y                          | fBodyGyro-std()-Y             |
+|     60 | frequencyBodyGyroscope-std()-Z                          | fBodyGyro-std()-Z             |
+|     61 | frequencyBodyAccelerometerMagnitudeMean                 | fBodyAccMag-mean()            |
+|     62 | frequencyBodyAccelerometerMagnitude-std()               | fBodyAccMag-std()             |
+|     63 | frequencyBodyAccelerometerJerkMagnitude-mean()          | fBodyBodyAccJerkMag-mean()    |
+|     64 | frequencyBodyAccelerometerJerkMagnitude-std()           | fBodyBodyAccJerkMag-std()     |
+|     65 | frequencyBodyGyroscopeMagnitude-mean()                  | fBodyBodyGyroMag-mean()       |
+|     66 | frequencyBodyGyroscopeMagnitude-std()                   | fBodyBodyGyroMag-std()        |
+|     67 | frequencyBodyGyroscopeJerkMagnitude-mean()              | fBodyBodyGyroJerkMag-mean()   |
+|     68 | frequencyBodyGyroscopeJerkMagnitude-std()               | fBodyBodyGyroJerkMag-std()    |
 
